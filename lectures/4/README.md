@@ -38,6 +38,3 @@
 ![gallery](pics/4.png)
 ![gallery](pics/5.png)
 
----
-
-# Информация из методы

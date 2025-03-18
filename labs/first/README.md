@@ -9,6 +9,8 @@
 
 [Ссылка на Kaggle](https://www.kaggle.com/c/titanic/overview)
 
+---
+
 ### Основные этапы
 
 1. **Загрузка и анализ данных**  
@@ -34,6 +36,8 @@
    - **F1-score** и **ROC-AUC** для сравнения качества
    - Построение **ROC-кривых** для визуального анализа
 
+---
+
 ### Зависимости
 
 Проект использует следующие библиотеки:
@@ -42,6 +46,8 @@
 - `matplotlib`, `seaborn` — для визуализации
 - `scikit-learn` — для предобработки данных и расчёта метрик
 - `torch`, `torch.nn`, `torch.optim` — для построения и обучения нейросетей
+
+---
 
 ### Анализ данных
 
@@ -58,6 +64,8 @@
 sns.countplot(x="Survived", data=df, palette="Set2")
 plt.show()
 ```
+
+---
 
 ### Архитектура моделей
 
@@ -92,6 +100,8 @@ class MultiLayerNN(nn.Module):
         return self.model(x)
 ```
 
+---
+
 ### Обучение моделей
 
 Обучение проходит в **100 эпох** с оптимизатором **Adam** и функцией потерь **BCELoss**:
@@ -107,6 +117,8 @@ def train_model(model, X_train, y_train, X_test, y_test, epochs=100, lr=0.01):
         loss.backward()
         optimizer.step()
 ```
+
+---
 
 ### Оценка моделей
 

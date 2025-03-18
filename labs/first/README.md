@@ -9,7 +9,7 @@
 
 [Ссылка на Kaggle](https://www.kaggle.com/c/titanic/overview)
 
-## Основные этапы
+### Основные этапы
 
 1. **Загрузка и анализ данных**  
    - Чтение данных из `train.csv`
@@ -34,7 +34,7 @@
    - **F1-score** и **ROC-AUC** для сравнения качества
    - Построение **ROC-кривых** для визуального анализа
 
-## Зависимости
+### Зависимости
 
 Проект использует следующие библиотеки:
 
@@ -43,7 +43,7 @@
 - `scikit-learn` — для предобработки данных и расчёта метрик
 - `torch`, `torch.nn`, `torch.optim` — для построения и обучения нейросетей
 
-## Анализ данных
+### Анализ данных
 
 Для понимания данных строятся графики:
 
@@ -59,9 +59,9 @@ sns.countplot(x="Survived", data=df, palette="Set2")
 plt.show()
 ```
 
-## Архитектура моделей
+### Архитектура моделей
 
-### Однослойный перцептрон (Single Layer NN)
+#### Однослойный перцептрон (Single Layer NN)
 
 ```python
 class SingleLayerNN(nn.Module):
@@ -73,7 +73,7 @@ class SingleLayerNN(nn.Module):
         return torch.sigmoid(self.fc(x))
 ```
 
-### Многослойный перцептрон (Multi Layer NN)
+#### Многослойный перцептрон (Multi Layer NN)
 
 ```python
 class MultiLayerNN(nn.Module):
@@ -92,7 +92,7 @@ class MultiLayerNN(nn.Module):
         return self.model(x)
 ```
 
-## Обучение моделей
+### Обучение моделей
 
 Обучение проходит в **100 эпох** с оптимизатором **Adam** и функцией потерь **BCELoss**:
 
@@ -108,7 +108,7 @@ def train_model(model, X_train, y_train, X_test, y_test, epochs=100, lr=0.01):
         optimizer.step()
 ```
 
-## Оценка моделей
+### Оценка моделей
 
 Оценка качества с метриками **F1-score** и **ROC-AUC**:
 
@@ -120,7 +120,7 @@ def calculate_metrics(model, X_test, y_test, threshold=0.75):
         return f1_score(y_test, preds), roc_auc_score(y_test, probs)
 ```
 
-### ROC-кривая
+#### ROC-кривая
 
 ```python
 plt.plot(fpr, tpr, label=f"Model (AUC = {roc_auc_score(y_test, probabilities):.4f})")

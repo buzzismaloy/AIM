@@ -67,11 +67,3 @@ pip install numpy pandas seaborn matplotlib torch torchvision scikit-learn tqdm
 - Матрица ошибок
 
 ---
-
-## Запуск проекта
-
-```python
-python train.py
-```
-
----
